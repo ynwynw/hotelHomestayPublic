@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.YuangongDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.YuangongEntity" id="yuangongMap">
+        <result property="yuangonggonghao" column="yuangonggonghao"/>
+        <result property="yuangongmima" column="yuangongmima"/>
+        <result property="yuangongxingming" column="yuangongxingming"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="shenfenzhenghao" column="shenfenzhenghao"/>
+        <result property="bumen" column="bumen"/>
+        <result property="zhiwei" column="zhiwei"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.YuangongView" >
+
+		SELECT  yuangong.* FROM yuangong  yuangong 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.YuangongView" >
+		SELECT * FROM yuangong  yuangong <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
